@@ -1,0 +1,188 @@
+.ControlToggle {
+   background: linear-gradient(to right, #9d5a5a72 0%,#9d5a5a40 17%,#9d5a5a16 30%,rgba(140,167,168,0) 55%,rgba(125,185,232,0) 100%); 
+   margin: 0 3px;
+   padding: 2px;
+   display: flex;
+   align-items: center;
+   justify-content: left;
+   border-radius: 10rem;
+   position: relative;
+   transform: scale(0);
+   transition: transform 300ms;
+   user-select: none;
+   &:nth-child(even) {
+      flex-direction: row-reverse;
+      background: linear-gradient(to left, #9d5a5a72 0%,#9d5a5a40 17%,#9d5a5a16 30%,rgba(140,167,168,0) 55%,rgba(125,185,232,0) 100%); 
+      & .buttonsWrap {
+         left: unset;
+         right: 23px;
+         flex-direction: row;
+      }
+      & .imgHoverDetect {
+         left: unset;
+         right: 3px;
+      }
+   }
+   & .imgHoverDetect {
+      position: absolute;
+      top: 0px;
+      left: 3px;
+      bottom: 0px;
+      width: 46px;
+      z-index: 300;
+      transition: width 500ms;
+      &:hover {
+         width: 93%;
+         & ~ img {
+            filter: drop-shadow(0 0 10px white);
+            transform: scale(1.2);
+         }
+         & .buttonsWrap {
+            opacity: 1;
+            width: 88% !important;
+            & button {
+               margin: 0 5px;
+               z-index: 1;
+               opacity: 1;
+               &:disabled {
+                  z-index: -1;
+                  opacity: .5;
+               }
+            }
+         }
+         & ~ span {
+            margin: 0 6px;
+         }
+      }
+   }
+   & img {
+      display: inline-block;
+      width: 50px;
+      z-index: 100;
+      transition: transform 250ms cubic-bezier(0.075, 0.82, 0.165, 1);
+   }
+   & span {
+      text-align: left;
+      color: black;
+      font-weight: bold;
+      margin: 0px 3px;
+      transition:
+         margin 300ms,
+         opacity 200ms;
+   }
+   .buttonsWrap {
+      position: absolute;
+      left: 20px;
+      top: 0;
+      bottom: 0;
+      display: flex;
+      flex-direction: row-reverse;
+      align-items: center;
+      width: 0px;
+      opacity: 0;
+      z-index: -1;
+      transition:
+         width 300ms,
+         opacity 400ms;
+      & .buttonContainer {
+         position: relative;
+         height: 100%;
+         width: fit-content;
+         display: flex;
+         align-items: center;
+         justify-content: space-between;
+      }
+      & button {
+         padding: 2px;
+         width: 30px;
+         height: 30px;
+         border: none;
+         border-radius: 100%;
+         background-color: rgb(216, 188, 133);
+         outline: none;
+         margin: 0 -15px;
+         position: relative;
+         z-index: -200;
+         opacity: 0;
+         transition: 
+            margin 300ms 100ms,
+            opacity 120ms cubic-bezier(0.075, 0.82, 0.165, 1),
+            z-index 200ms;
+         & svg {
+            color: rgb(125, 86, 35);
+         }
+         &:hover {
+            background-color: rgb(201, 163, 88);
+            & svg {
+               color: rgb(255, 237, 213);
+            }
+         }
+      }
+   }
+   
+   & section {
+      display: inline-block;
+      width: 3px;
+      height: 3px;
+   }
+}
+
+@media only screen and (max-width: 575px) {
+   .ControlToggle {
+      margin: 6px 10px;
+      background: #9d5a5a4d;
+      padding: 20px 2px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-around;
+      width: 78px;
+      height: 78px;
+      border-radius: 1rem;
+      &:nth-child(even) {
+         flex-direction: column;
+         background: #9d5a5a4d;
+         & span {
+            text-align: right;
+            padding-left: 0;
+         }
+      }
+      & .name {
+         padding-top: 5%;
+         margin-left: auto;
+         margin-right: auto;
+      }
+      & .imgHoverDetect {
+         &:hover {
+            & ~ img {
+               filter: none;
+               transform: none;
+            }
+         }
+      }
+      & img {
+         display: block;
+         width: 70%;
+         margin-left: auto;
+         margin-right: auto;
+         &:hover {
+            filter: unset;
+            transform: unset;
+         }
+      }
+   }
+}
+
+@media only screen and (min-width:576px) and (max-width:992px){
+   .imgHoverDetect:hover ~ span {
+      opacity: 0;
+   }
+}
+
+@media only screen and (min-width:1200px) {
+   .ControlToggle .imgHoverDetect:hover {
+      & .buttonsWrap {
+         width: 70% !important;
+      }
+   }
+}

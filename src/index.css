@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css?family=Assistant:300&display=swap');
+body {
+   margin: 0;
+  /* font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif; */
+   font-family: 'Assistant', sans-serif;
+   -webkit-font-smoothing: antialiased;
+   -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+   monospace;
+}
+
+.animateHeight {
+   height: 200px !important;
+}
+.animateWidth {
+width: 90% !important;
+}
+.scaleUp {
+   transform: scale(1) !important;
+}
+
+.summaryDiv-show {
+   opacity: 1 !important;
+}

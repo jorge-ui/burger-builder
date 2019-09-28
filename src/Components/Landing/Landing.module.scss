@@ -1,0 +1,54 @@
+.Landing {
+   background-color: #00000000;
+   background-position: center;
+   background-size: cover;
+   height: 100%;
+   width: 100%;
+   position: fixed;
+   opacity: 0;
+   transition: opacity 700ms;
+   & > div {
+      padding-top: 10vh;
+   }
+   & h3 {
+      text-shadow: 0 0 20px #000000;
+      font-family: 'Assistant', sans-serif;
+      font-size: 4.5rem;
+      padding-top: 15vh;
+      text-align: center;
+      color: whitesmoke;
+   }
+   & button {
+      margin: auto;
+      margin-top: 10vh;
+      display: block;
+      width: fit-content;
+      font-weight: bold;
+      font-size: 1.7rem;
+      background-color: chocolate;
+      border: none;
+      transition: 
+         transform        550ms cubic-bezier(0.39, 0.575, 0.565, 1),
+         background-color 550ms cubic-bezier(0.39, 0.575, 0.565, 1),
+         box-shadow       550ms cubic-bezier(0.39, 0.575, 0.565, 1);
+      &:hover {
+         box-shadow: 0 0 20px 4px white;
+         transform: scale(1.3);
+         background-color: #e42a2a !important;
+      }
+   }
+}
+@media only screen and (max-width: 575px) {
+   .Landing > div {
+      padding-top: 15vh;
+      & h3 {
+         font-size: 3.5rem;
+      }
+      & button {
+         box-shadow: 0 0 7px black;
+         font-weight: bold;
+         font-size: 1.2rem;
+         padding: 10px 20px;
+      }
+   }
+}

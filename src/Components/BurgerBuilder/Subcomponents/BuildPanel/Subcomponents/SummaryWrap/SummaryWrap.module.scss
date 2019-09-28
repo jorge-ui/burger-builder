@@ -1,0 +1,95 @@
+.SummaryWrap {
+   position: relative;
+   width: 25%;
+   & h5 {
+      text-align: center;
+      height: 25px;
+      width: 0%;
+      overflow: hidden !important;
+      margin-right: auto;
+      margin-left: auto;
+      transition: width 550ms cubic-bezier(0.19, 0.83, 0.5, 1) 200ms;
+   }
+   & .container {
+      opacity: 0;
+      transition: opacity 500ms;
+      & .info {
+         margin: 0 20px;
+         margin-top: 30px;
+         display: flex;
+         justify-content: center;
+         font-weight: bold;
+         font-size: 1.2rem;
+      }
+      & .checkoutBtn {
+         font-size: 1.3rem;
+         font-weight: bold;
+         border: none;
+         position: absolute;
+         bottom: 40px;
+         border: 3px solid #ba7575;
+         left: 0;
+         right: 0;
+         text-align: center;
+         background-color: #bc4040;
+         color: white;
+         cursor: pointer;
+         width: 80%;
+         height: 40px;
+         margin: auto;
+         outline: none;
+         transition: all 400ms;
+         &:hover {
+            background-color: #ff3f3f;
+         }
+         &:disabled {
+            cursor: unset;
+            opacity: .5;
+            background-color: rgb(103, 103, 103);
+            border-color: rgb(78, 78, 78);
+         }
+      }
+   }
+}
+
+@media only screen and (max-width: 575px) {
+   .SummaryWrap {
+      width: 100%;
+      height: 90px;
+      margin-top: 20px;
+      & .container {
+         display: flex;
+         justify-content: space-between;
+         align-items: center;
+         height: 70%;
+         padding: 0 40px;
+         & .info {
+            margin-top: unset;
+            justify-content: unset;
+            font-size: 1.3rem;
+            position: relative;
+            display: flex;
+            align-items: center;
+            width: fit-content;
+            padding: 0;
+            margin: 0;
+            & label {
+               margin: 0;
+               padding-right: 10px;
+            }
+         }
+         & .checkoutBtn {
+            position: relative;
+            display: block;
+            width: 35vw;
+            margin: unset;
+            bottom: unset;
+         }
+      }
+      & .info {
+         display: flex;
+         justify-content: space-around;
+         padding: 0 calc(100% - 70vw);
+      }
+   }
+}

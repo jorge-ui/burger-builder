@@ -1,0 +1,51 @@
+.CheckoutForm {
+   & > div:first-child {
+      // border-color: rgb(148, 14, 189);
+      margin-bottom: 0;
+   }
+   & > div:nth-child(3) > div {
+      // border-color: orange;
+      margin-top: 0;
+   }
+   & p {
+      margin: 0;
+      text-align: center;
+      font-size: small;
+      color: red;
+   }
+   & .input {
+      border: 2px solid rgb(142, 183, 255);
+      padding: 10px;
+      border-radius: 10px;
+      margin: 10px 5px;
+      width: auto;
+      & > div {
+         width: 100%;
+      }
+   }
+   & .line2 {
+      display: flex;
+      justify-content: space-between;
+      & > div {
+         width: 50%;
+      }
+   }
+   & button {
+      position: absolute;
+      bottom: -38px;
+      left: 0;
+      right: 0;
+      display: block;
+      width: 40%;
+      margin: 0 auto;
+      padding: 5px 10px;
+      border: none;
+      border-radius: 10px;
+      background-color: rgb(133, 204, 83);
+      color: white;
+      font-weight: bold;
+      outline: none;
+   }
+}
+
+
